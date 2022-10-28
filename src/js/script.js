@@ -40,6 +40,10 @@
         if (!favouriteBooks.includes(clickedImageId)) {
           event.target.offsetParent.classList.add('favorite');
           favouriteBooks.push(clickedImageId);
+        } else {
+          event.target.offsetParent.classList.remove('favorite');
+          const index = favouriteBooks.indexOf(clickedImageId);
+          favouriteBooks.splice(index, 1);
         }
 
         console.log(favouriteBooks);
